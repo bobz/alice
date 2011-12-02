@@ -1,0 +1,17 @@
+<h1>Groups</h1>
+
+<div id="groups">
+  <ul>
+    <% @groups.each do |group| %>
+      <li><%= group.name %></li>
+    <% end %>
+  </ul>
+</div>
+
+<%= content_for :javascript do -%>
+  <%= javascript_tag do %>
+    $(function() {
+      ExampleApp.init(<%== @groups.to_json %>);
+    });
+  <% end %>
+<% end -%>
