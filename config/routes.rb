@@ -3,6 +3,8 @@ ExampleApp::Application.routes.draw do
     resources :attachments, :only => [:create, :show]
   end
 
+  resources :groups
+
   resources :aliceparts, :only => [:index]
 
   root :to => 'aliceparts#index'
