@@ -22,6 +22,7 @@ group :development, :test do
   gem "ruby-debug19"
   gem 'jasmine', "= 1.1.0.rc4"
   gem 'jasminerice'
+  gem 'heroku'
 end
 
 group :test do
