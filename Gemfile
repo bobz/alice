@@ -29,6 +29,7 @@ group :development, :test do
   gem 'jasmine', "= 1.1.0.rc4"
   gem 'jasminerice'
   gem 'heroku'
+  gem 'minitest'
 end
 
 group :test do

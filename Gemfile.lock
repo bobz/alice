@@ -121,6 +121,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
+    minitest (2.8.1)
     mocha (0.9.8)
       rake
     multi_json (1.0.4)
@@ -244,6 +245,7 @@ DEPENDENCIES
   jasminerice
   jquery-rails
   launchy
+  minitest
   nokogiri
   paperclip
   pg
