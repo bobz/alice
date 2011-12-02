@@ -8,6 +8,7 @@
 <body>
   <div id="contents">
     <div id="header">
+      <%= link_to "Home", "/" %>
       <% flash.each do |key, value| -%>
         <div class="flash <%= key %>"><%= value %></div>
       <% end -%>

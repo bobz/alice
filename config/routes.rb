@@ -3,7 +3,9 @@ ExampleApp::Application.routes.draw do
     resources :attachments, :only => [:create, :show]
   end
 
-  root :to => 'tasks#index'
+  resources :aliceparts, :only => [:index]
+
+  root :to => 'aliceparts#index'
 
   if ["development", "test"].include? Rails.env
     mount Jasminerice::Engine => "/jasmine"
