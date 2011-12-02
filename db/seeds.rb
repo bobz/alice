@@ -5,3 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+
+User.delete_all
+Group.delete_all
+
+bobz = User.create!({
+  email: 'bobz@bobz.in',
+  password: 'please'
+})
+
+Group.create!([
+{
+  owner_id: bobz.id,
+  name: 'Default'
+},
+{
+  owner_id: bobz.id,
+  name: 'Tri'
+}]).each { |group| group.users << bobz }
+
+
