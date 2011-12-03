@@ -26,7 +26,7 @@ TasksApp.Views.TaskItem = Backbone.View.extend({
   },
 
   taskUrl: function() {
-    return "#tasks/" + this.model.get('id');
+    return "#" + this.model.get('id');
   },
 
   update: function() {

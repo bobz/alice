@@ -6,7 +6,7 @@ TasksApp.Routers.Tasks = Backbone.Router.extend({
   routes: {
     "":          "index",
     "new":       "newTask",
-    "tasks/:id": "show"
+    ":id":       "show"
   },
 
   index: function() {
