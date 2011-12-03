@@ -1,4 +1,4 @@
-ExampleApp::Application.routes.draw do
+AliceApp::Application.routes.draw do
   resources :tasks do
     resources :attachments, :only => [:create, :show]
   end
