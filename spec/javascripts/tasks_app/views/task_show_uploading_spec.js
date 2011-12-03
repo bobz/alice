@@ -1,6 +1,6 @@
 //= require application
 
-describe("ExampleApp.Views.TaskShow uploading", function() {
+describe("TasksApp.Views.TaskShow uploading", function() {
   var task, view, $el;
 
   beforeEach(function() {
@@ -15,12 +15,12 @@ describe("ExampleApp.Views.TaskShow uploading", function() {
       addEventListener: function() {}
     };
 
-    task = new ExampleApp.Models.Task({
+    task = new TasksApp.Models.Task({
       id: 1,
       title: "Wake up"
     });
 
-    view = new ExampleApp.Views.TaskShow({ model: task });
+    view = new TasksApp.Views.TaskShow({ model: task });
   });
 
   afterEach(function() {

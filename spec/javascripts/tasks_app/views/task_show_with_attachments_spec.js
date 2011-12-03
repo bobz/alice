@@ -1,10 +1,10 @@
 //= require application
 
-describe("ExampleApp.Views.TaskShow for a task with attachments", function() {
+describe("TasksApp.Views.TaskShow for a task with attachments", function() {
   var task, view, $el;
 
   beforeEach(function() {
-    task = new ExampleApp.Models.Task({
+    task = new TasksApp.Models.Task({
       id: 1,
       title: "Buy pies",
       attachments: [
@@ -19,7 +19,7 @@ describe("ExampleApp.Views.TaskShow for a task with attachments", function() {
       ]
     });
 
-    view = new ExampleApp.Views.TaskShow({ model: task });
+    view = new TasksApp.Views.TaskShow({ model: task });
     $el = $(view.render().el);
   });
 

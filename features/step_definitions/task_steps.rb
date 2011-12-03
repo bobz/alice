@@ -1,5 +1,5 @@
 When /^I create a task "([^"]*)"$/ do |task_title|
-  visit root_path
+  visit tasks_path
   click_link "Add task"
   fill_in "Title", :with => task_title
   click_button "Create task"

@@ -1,15 +1,15 @@
 //= require application
 
-describe("ExampleApp.Views.TaskShow", function() {
+describe("TasksApp.Views.TaskShow", function() {
   var task, view, $el;
 
   beforeEach(function() {
-    task = new ExampleApp.Models.Task({
+    task = new TasksApp.Models.Task({
       id: 1,
       title: "Wake up"
     });
 
-    view = new ExampleApp.Views.TaskShow({ model: task });
+    view = new TasksApp.Views.TaskShow({ model: task });
     $el = $(view.render().el);
   });
 

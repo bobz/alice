@@ -1,6 +1,6 @@
-ExampleApp.Routers.Tasks = Backbone.Router.extend({
+TasksApp.Routers.Tasks = Backbone.Router.extend({
   initialize: function() {
-    this.collection = ExampleApp.tasks; // TODO eventually pass in
+    this.collection = TasksApp.tasks; // TODO eventually pass in
   },
 
   routes: {
@@ -10,12 +10,12 @@ ExampleApp.Routers.Tasks = Backbone.Router.extend({
   },
 
   index: function() {
-    var view = new ExampleApp.Views.TasksIndex({ collection: this.collection });
+    var view = new TasksApp.Views.TasksIndex({ collection: this.collection });
     $('#tasks').html(view.render().el);
   },
 
   newTask: function() {
-    var view = new ExampleApp.Views.TasksNew({ collection: this.collection });
+    var view = new TasksApp.Views.TasksNew({ collection: this.collection });
     $('#tasks').html(view.render().el);
   },
 
@@ -23,7 +23,7 @@ ExampleApp.Routers.Tasks = Backbone.Router.extend({
     var task = this.collection.get(taskId);
     task.fetch({
       success: function() {
-        var view = new ExampleApp.Views.TaskShow({ model: task });
+        var view = new TasksApp.Views.TaskShow({ model: task });
         $('#tasks').html(view.render().el);
       }
     });

@@ -1,4 +1,4 @@
-ExampleApp.Views.TasksNew = Backbone.View.extend({
+TasksApp.Views.TasksNew = Backbone.View.extend({
   tagName: 'form',
   id: "new-task",
 
@@ -13,7 +13,7 @@ ExampleApp.Views.TasksNew = Backbone.View.extend({
   },
 
   newTask: function() {
-    this.model = new ExampleApp.Models.Task();
+    this.model = new TasksApp.Models.Task();
     this.form = new Backbone.Form({ model: this.model });
   },
 

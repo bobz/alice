@@ -1,4 +1,4 @@
-ExampleApp.Views.TaskItem = Backbone.View.extend({
+TasksApp.Views.TaskItem = Backbone.View.extend({
   tagName: "tr",
 
   events: {

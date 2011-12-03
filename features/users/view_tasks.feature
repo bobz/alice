@@ -13,6 +13,6 @@ Feature: Viewing Tasks
       | Title                                | user                     |
       | Purchase the backbone on rails ebook | email: email@example.com |
       | Master backbone                      | email: email@example.com |
-    And I am on the home page
+    And I am on the tasks page
     Then I should see "Master backbone" within the tasks list
     And I should see "Purchase the backbone on rails ebook" within the tasks list

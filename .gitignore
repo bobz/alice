@@ -4,3 +4,4 @@ log
 public/assets
 tmp
 *.sqlite3
+public/system/uploads

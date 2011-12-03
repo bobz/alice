@@ -10,5 +10,5 @@ guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAIL
   watch(%r{spec/factories.rb$})
   watch(%r{spec/factories/.+\.rb$})
   watch(%r{spec/support/.+\.rb$})
-  watch(%r{features/support/.+\.rb$})
+  watch(%r{features/.+\.rb$})
 end

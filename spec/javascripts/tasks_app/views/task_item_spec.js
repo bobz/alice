@@ -1,11 +1,11 @@
 //= require application
 
-describe("ExampleApp.Views.TaskItem", function() {
+describe("TasksApp.Views.TaskItem", function() {
   var task, view;
 
   beforeEach(function() {
-    task = new ExampleApp.Models.Task({ title: "Wake up", id: 7 });
-    view = new ExampleApp.Views.TaskItem({ model: task });
+    task = new TasksApp.Models.Task({ title: "Wake up", id: 7 });
+    view = new TasksApp.Views.TaskItem({ model: task });
   });
 
   it("renders an individual task", function() {

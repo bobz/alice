@@ -30,10 +30,13 @@ group :development, :test do
   gem 'jasminerice'
   gem 'heroku'
   gem 'minitest'
+  gem 'rb-fsevent'
+  gem 'growl_notify'
+  gem 'autotest-rails'
 end
 
 group :test do
-  gem 'turn', :require => false
+  gem 'turn', '0.8.2', :require => false
   gem "capybara", "~> 1.1.1"
   gem "selenium-webdriver", "~> 2.10.0"
   gem 'cucumber-rails', "~> 1.0.2"

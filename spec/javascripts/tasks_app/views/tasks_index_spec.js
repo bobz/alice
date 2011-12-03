@@ -1,14 +1,14 @@
 //= require application
 
-describe("ExampleApp.Views.TasksIndex", function() {
+describe("TasksApp.Views.TasksIndex", function() {
   it("renders a collection of tasks", function() {
-    var tasksCollection = new ExampleApp.Collections.Tasks();
+    var tasksCollection = new TasksApp.Collections.Tasks();
     tasksCollection.reset([
       { title: "Wake up" },
       { title: "Brush your teeth" }
     ]);
 
-    var view = new ExampleApp.Views.TasksIndex({collection: tasksCollection});
+    var view = new TasksApp.Views.TasksIndex({collection: tasksCollection});
     var $el = $(view.render().el);
 
     expect($el).toHaveText(/Wake up/);
