@@ -6,7 +6,7 @@ GroupsApp.Routers.Tasks = Backbone.Router.extend({
   routes: {
     "":          "index",
     "new":       "newGroup",
-    "groups/:id": "show"
+    ":id":       "show"
   },
 
   index: function() {
