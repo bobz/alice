@@ -1,4 +1,4 @@
-GroupsApp.Views.TasksNew = Backbone.View.extend({
+GroupsApp.Views.GroupsNew = Backbone.View.extend({
   tagName: 'form',
   id: "new-group",
 
@@ -13,7 +13,7 @@ GroupsApp.Views.TasksNew = Backbone.View.extend({
   },
 
   newGroup: function() {
-    this.model = new GroupsApp.Models.Task();
+    this.model = new GroupsApp.Models.Group();
     this.form = new Backbone.Form({ model: this.model });
   },
 

@@ -1,4 +1,4 @@
-GroupsApp.Views.TaskShow = Backbone.View.extend({
+GroupsApp.Views.GroupShow = Backbone.View.extend({
   initialize: function() {
     _.bindAll(this, "render", "uploadSuccess");
     this.model.bind("change", this.render);

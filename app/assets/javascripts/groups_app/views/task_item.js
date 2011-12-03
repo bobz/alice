@@ -1,4 +1,4 @@
-GroupsApp.Views.TaskItem = Backbone.View.extend({
+GroupsApp.Views.GroupItem = Backbone.View.extend({
   tagName: "tr",
 
   events: {

@@ -1,4 +1,4 @@
-GroupsApp.Routers.Tasks = Backbone.Router.extend({
+GroupsApp.Routers.Groups = Backbone.Router.extend({
   initialize: function() {
     this.collection = GroupsApp.groups; // TODO eventually pass in
   },
@@ -10,12 +10,12 @@ GroupsApp.Routers.Tasks = Backbone.Router.extend({
   },
 
   index: function() {
-    var view = new GroupsApp.Views.TasksIndex({ collection: this.collection });
+    var view = new GroupsApp.Views.GroupsIndex({ collection: this.collection });
     $('#groups').html(view.render().el);
   },
 
   newGroup: function() {
-    var view = new GroupsApp.Views.TasksNew({ collection: this.collection });
+    var view = new GroupsApp.Views.GroupsNew({ collection: this.collection });
     $('#groups').html(view.render().el);
   },
 
@@ -23,7 +23,7 @@ GroupsApp.Routers.Tasks = Backbone.Router.extend({
     var group = this.collection.get(taskId);
     group.fetch({
       success: function() {
-        var view = new GroupsApp.Views.TaskShow({ model: group });
+        var view = new GroupsApp.Views.GroupShow({ model: group });
         $('#groups').html(view.render().el);
       }
     });
