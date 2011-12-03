@@ -10,3 +10,4 @@
 //= require uploader.js
 //
 //= require ./tasks_app/application.js
+//= require ./groups_app/application.js
