@@ -11,7 +11,7 @@
 <%= content_for :javascript do -%>
   <%= javascript_tag do %>
     $(function() {
-      ExampleApp.init(<%== @groups.to_json %>);
+      GroupsApp.init(<%== @groups.to_json %>);
     });
   <% end %>
 <% end -%>
