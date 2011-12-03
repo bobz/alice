@@ -19,12 +19,12 @@ GroupsApp.Views.TasksNew = Backbone.View.extend({
 
   render: function () {
     $(this.el).html(this.form.render().el);
-    this.$('ul').append(JST['groups/form_buttons']());
+    this.$('ul').append(JST['shared/form_buttons']());
     return this;
   },
 
   renderFlash: function(flashText) {
-    $(this.el).prepend(JST['groups/flash']({ flashText: flashText, type: 'success' }));
+    $(this.el).prepend(JST['shared/flash']({ flashText: flashText, type: 'success' }));
   },
 
   save: function(event) {
