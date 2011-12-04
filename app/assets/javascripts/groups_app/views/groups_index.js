@@ -11,7 +11,7 @@ GroupsApp.Views.GroupsIndex = Backbone.View.extend({
   },
 
   renderTemplate: function() {
-    $(this.el).html(JST['groups/index']({ tasks: this.collection }));
+    $(this.el).html(JST['groups/index']({ groups: this.collection }));
   },
 
   renderGroups: function() {

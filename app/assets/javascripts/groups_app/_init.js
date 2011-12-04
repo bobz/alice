@@ -4,7 +4,7 @@ var GroupsApp = {
   Views: {},
   Routers: {},
   init: function(groups) {
-    this.groups = new GroupsApp.Collections.Groups(tasks);
+    this.groups = new GroupsApp.Collections.Groups(groups);
 
     new GroupsApp.Routers.Groups();
     if (!Backbone.history.started) {

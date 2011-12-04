@@ -1,4 +1,4 @@
-//= require      ./init.js
+//= require      ./_init.js
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
