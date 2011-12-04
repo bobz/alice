@@ -20,7 +20,7 @@ GroupsApp.Routers.Groups = Backbone.Router.extend({
   },
 
   show: function(groupId) {
-    var group = this.collection.get(taskId);
+    var group = this.collection.get(groupId);
     group.fetch({
       success: function() {
         var view = new GroupsApp.Views.GroupShow({ model: group });

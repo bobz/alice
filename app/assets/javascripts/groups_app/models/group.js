@@ -1,20 +1,22 @@
 GroupsApp.Models.Group = Backbone.Model.extend({
   initialize: function() {
-    this.bind("change:attachments", this.parseAttachments);
-    this.parseAttachments();
-  },
+    if (this.has('owner')) {
+      this.setOwner(new User(this.get('owner')));
+    }
+    var users = new Users.reset(this.get('users'));
+    this.setUsers(users);
 
-  parseAttachments: function() {
-    this.attachments = new GroupsApp.Collections.Attachments(this.get('attachments'));
-  },
-
-  schema: {
-    title: { type: "Text" }
   },
 
   urlRoot: '/groups',
 
-  isComplete: function() {
-    return this.get('complete');
+  setOwner: function(owner) {
+    this.owner = owner;
   }
+
+  setUsers: function(users) {
+    this.users = users;
+  }
+
+
 });
