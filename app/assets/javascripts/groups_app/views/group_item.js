@@ -12,9 +12,16 @@ GroupsApp.Views.GroupItem = Backbone.View.extend({
   },
 
   renderFormContents: function() {
-    this.$('label').text(this.model.escape('name'));
+    this.$('.group-name').text(this.model.escape('name'));
 
-    this.$('a').attr("href", this.groupUrl());
+    this.$('.group-link').attr("href", this.groupUrl());
+
+    this.$('.group-members').text("");
+    var self = this;
+    this.model.users.each( function(user) {
+      self.$('.group-members').append(user.escape('email'));
+    });
+      
   },
 
   groupUrl: function() {
