@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   
   def as_json( options={} ) 
     {
-      "email" => self.email
+      id: self.id,
+      email: self.email
     }
   end
 

@@ -2,7 +2,8 @@ GroupsApp.Models.Group = Backbone.Model.extend({
   
   initialize: function() {
     if (this.has('owner')) {
-      this.setOwner(new User(this.get('owner')));
+      var owner = new GroupsApp.Models.User(this.get('owner'));
+      this.setOwner(owner);
     }
     var users = new GroupsApp.Collections.Users;
     users.reset(this.get('users'));

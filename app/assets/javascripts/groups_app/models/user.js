@@ -1,5 +1,5 @@
 GroupsApp.Models.User = Backbone.Model.extend({
-  initialize: function() {
+  initialize: function(user) {
   },
 
   urlRoot: '/users',
