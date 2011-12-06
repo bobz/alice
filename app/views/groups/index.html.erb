@@ -11,7 +11,7 @@
 <%= content_for :javascript do -%>
   <%= javascript_tag do %>
     $(function() {
-      GroupsApp.init(<%== current_user.to_json %>, <%== @groups.to_json(:include => :users ) %>);
+    GroupsApp.init(<%== current_user.to_json %>, <%== @groups.to_json(:include => [:users, :owner] ) %>);
     });
   <% end %>
 <% end -%>
