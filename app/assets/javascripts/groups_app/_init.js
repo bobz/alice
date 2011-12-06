@@ -1,9 +1,12 @@
 var GroupsApp = {
+  current_user: undefined,
   Models: {},
   Collections: {},
   Views: {},
   Routers: {},
-  init: function(groups) {
+  init: function(user, groups) {
+    current_user = user;
+
     this.groups = new GroupsApp.Collections.Groups(groups);
 
     new GroupsApp.Routers.Groups();
