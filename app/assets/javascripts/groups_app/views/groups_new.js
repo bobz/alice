@@ -34,7 +34,7 @@ GroupsApp.Views.GroupsNew = Backbone.View.extend({
   },
 
   saved: function() {
-    var flash = "Created group: " + this.model.escape('title');
+    var flash = "Created group: " + this.model.escape('name');
 
     this.collection.add(this.model);
     this.newGroup();

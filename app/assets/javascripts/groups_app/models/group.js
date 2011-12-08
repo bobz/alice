@@ -11,6 +11,10 @@ GroupsApp.Models.Group = Backbone.Model.extend({
 
   },
 
+  schema: {
+    name: { type: "Text" }
+  },
+
   urlRoot: '/groups',
 
   setOwner: function(owner) {
