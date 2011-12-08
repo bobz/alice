@@ -20,7 +20,7 @@ GroupsApp.Views.GroupItem = Backbone.View.extend({
       self.$('.group-members').append(user.escape('email'));
     });
 
-    if (this.model.owner.email == GroupsApp.current_user)
+    if (this.model.getOwner().id == GroupsApp.current_user.id)
     {
       var edit_link = document.createElement('a');
       $(edit_link).text("Edit");

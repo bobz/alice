@@ -1,15 +1,16 @@
 GroupsApp.Models.Group = Backbone.Model.extend({
   
   initialize: function() {
-    var owner = new GroupsApp.Models.User(this.get('owner'));
-    this.setOwner(owner);
+
     var users = new GroupsApp.Collections.Users;
+
     if (this.id)
     {
       users.url = '/groups/' + this.id + '/users'
     }
-    users.reset(this.get('users'));
-    this.setUsers(users);
+
+    users.reset(_.map(this.get('users'), function(n) { return GroupsApp.users.get(n.id) }));
+    this.users = users;
 
   },
 
@@ -25,12 +26,17 @@ GroupsApp.Models.Group = Backbone.Model.extend({
 
   urlRoot: '/groups',
 
-  getOwner: function(){
-    return GroupsApp.users.get(this.owner_id);
-  }
+  getOwner: function() {
+    if ( ! this.owner ) 
+    {
+      var owner_id = this.get('owner_id');
+      if (owner_id ) {
+        owner = GroupsApp.users.get(owner_id);
+        this.owner = owner;
+      }
+    }
 
-  setUsers: function(users) {
-    this.users = users;
+    return this.owner;
   }
-  
+ 
 });

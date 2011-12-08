@@ -4,10 +4,12 @@ var GroupsApp = {
   Views: {},
   Routers: {},
   init: function(current_user, groups, users) {
-    this.current_user = new GroupsApp.Models.User(current_user);
+
+    this.users = new GroupsApp.Collections.Users(users);
+
+    this.current_user = this.users.get(current_user.id);
 
     this.groups = new GroupsApp.Collections.Groups(groups);
-    this.users = new GroupsApp.Collections.Users(users);
 
     new GroupsApp.Routers.Groups();
     if (!Backbone.history.started) {
