@@ -3,7 +3,9 @@ class GroupsController < ApplicationController
   respond_to :html, :json
 
   def index
-    respond_with(@groups = current_user.groups)
+    @users = User.all
+    @groups = current_user.groups
+    respond_with(@groups)
   end
 
   def show

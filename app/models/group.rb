@@ -7,8 +7,8 @@ class Group < ActiveRecord::Base
     {
       id: self.id,
       name: self.name,
-      owner: self.owner,
-      users: self.users
+      owner_id: self.owner_id,
+      user_ids: self.users.map { |x| x.id }
     }
   end
 

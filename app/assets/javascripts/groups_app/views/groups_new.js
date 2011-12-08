@@ -1,6 +1,6 @@
 GroupsApp.Views.GroupsNew = Backbone.View.extend({
   tagName: 'form',
-  id: "new-group",
+  id: 'new-group',
 
   events: {
     "submit": "save",
@@ -14,7 +14,10 @@ GroupsApp.Views.GroupsNew = Backbone.View.extend({
 
   newGroup: function() {
     this.model = new GroupsApp.Models.Group();
-    this.form = new Backbone.Form({ model: this.model });
+    this_users = new GroupsApp.Collections.Users();
+    this_users.add( GroupsApp.current_user );
+    this.model.schema.owner_id.options = this_users; 
+    this.form = new Backbone.Form({ model: this.model, data: { name: 'New Group' } });
   },
 
   render: function () {

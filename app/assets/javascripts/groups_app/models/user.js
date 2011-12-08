@@ -1,11 +1,17 @@
 GroupsApp.Models.User = Backbone.Model.extend({
-  initialize: function(user) {
+  initialize: function() {
+    var email = this.get('email');
+    this.setEmail(email);
   },
 
   urlRoot: '/users',
+
+  setEmail: function(email) {
+    this.email=email;
+  },
   
   toString: function(){
-    email
+    return this.email
   }
 
 });
