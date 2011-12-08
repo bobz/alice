@@ -3,7 +3,12 @@ class UsersController < ApplicationController
   respond_to :html, :json
 
   def index
-    respond_with(@users = User.all)
+    if (params[:group])
+      @users = Group.find(params[:group]).users
+    else
+      @users = User.all
+    end
+    respond_with(@users)
   end
 
   def show
