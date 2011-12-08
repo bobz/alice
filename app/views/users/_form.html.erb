@@ -1,0 +1,17 @@
+<%= form_for(@tempor) do |f| %>
+  <% if @tempor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tempor.errors.count, "error") %> prohibited this tempor from being saved:</h2>
+
+      <ul>
+      <% @tempor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,9 +1,21 @@
-<h1>Users</h1>
+<h1>Listing tempors</h1>
 
-<div id="users">
-  <ul>
-    <% @users.each do |user| %>
-      <li><%= user.id.to_s + " : " +  user.email %> </li>
-    <% end %>
-  </ul>
-</div>
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tempors.each do |tempor| %>
+  <tr>
+    <td><%= link_to 'Show', tempor %></td>
+    <td><%= link_to 'Edit', edit_tempor_path(tempor) %></td>
+    <td><%= link_to 'Destroy', tempor, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tempor', new_tempor_path %>
