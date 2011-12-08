@@ -9,9 +9,7 @@ TasksApp.Models.Task = Backbone.Model.extend({
   },
 
   schema: {
-    title: { type: "Text" },
-    owner: { type: 
-
+    title: { type: "Text" }
   },
 
   urlRoot: '/tasks',

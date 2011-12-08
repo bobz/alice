@@ -4,6 +4,7 @@ AliceApp::Application.routes.draw do
   end
 
   resources :groups
+  resources :users
 
   root :to => 'high_voltage/pages#show', :id => 'home'
 

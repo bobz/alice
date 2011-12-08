@@ -12,7 +12,8 @@ GroupsApp.Models.Group = Backbone.Model.extend({
   },
 
   schema: {
-    name: { type: "Text" }
+    name: { type: 'Text' },
+    owner: { type: 'Select', options: ['Option 1', 'Option 2']}
   },
 
   urlRoot: '/groups',
