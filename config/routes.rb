@@ -5,9 +5,7 @@ AliceApp::Application.routes.draw do
 
   resources :groups
 
-  resources :aliceparts, :only => [:index]
-
-  root :to => 'aliceparts#index'
+  root :to => 'high_voltage/pages#show', :id => 'home'
 
   if ["development", "test"].include? Rails.env
     mount Jasminerice::Engine => "/jasmine"

@@ -103,6 +103,7 @@ GEM
       rest-client (~> 1.6.1)
       rubyzip
       term-ansicolor (~> 1.0.5)
+    high_voltage (1.0.1)
     hike (1.2.1)
     i18n (0.6.0)
     jasmine (1.1.0.rc4)
@@ -252,6 +253,7 @@ DEPENDENCIES
   growl_notify
   guard-spork
   heroku
+  high_voltage
   jasmine (= 1.1.0.rc4)
   jasminerice
   jquery-rails
