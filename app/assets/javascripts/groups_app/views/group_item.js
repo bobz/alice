@@ -17,7 +17,7 @@ GroupsApp.Views.GroupItem = Backbone.View.extend({
     this.$('.group-members').text("");
     var self = this;
     this.model.users.each( function(user) {
-      self.$('.group-members').append(user.escape('email'));
+      self.$('.group-members').append(user.escape('email') + "\t");
     });
 
     if (this.model.getOwner().id == GroupsApp.current_user.id)

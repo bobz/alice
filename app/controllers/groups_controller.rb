@@ -4,16 +4,16 @@ class GroupsController < ApplicationController
 
   def index
     @users = User.all
-    @groups = current_user.groups
+    @groups = Group.all
     respond_with(@groups)
   end
 
   def show
-    @group = current_user.groups.find(params[:id])
+    @group = Group.find(params[:id])
   end
 
   def create
-    respond_with(current_user.groups.create(params[:group]))
+    respond_with(Group.create(params[:group]))
   end
 
   def update
