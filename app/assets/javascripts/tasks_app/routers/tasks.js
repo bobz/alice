@@ -11,20 +11,21 @@ TasksApp.Routers.Tasks = Backbone.Router.extend({
 
   index: function() {
     var view = new TasksApp.Views.TasksIndex({ collection: this.collection });
-    $('#tasks').html(view.render().el);
+    this.swap(view);
   },
 
   newTask: function() {
     var view = new TasksApp.Views.TasksNew({ collection: this.collection });
-    $('#tasks').html(view.render().el);
+    this.swap(view);
   },
 
   show: function(taskId) {
     var task = this.collection.get(taskId);
+    var taskRouter = this;
     task.fetch({
       success: function() {
         var view = new TasksApp.Views.TaskShow({ model: task });
-        $('#tasks').html(view.render().el);
+        taskRouter.swap(view);
       }
     });
   }
