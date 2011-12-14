@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111202080053) do
+ActiveRecord::Schema.define(:version => 20111214091205) do
 
   create_table "attachments", :force => true do |t|
     t.string   "upload_file_name"
@@ -24,10 +24,11 @@ ActiveRecord::Schema.define(:version => 20111202080053) do
   end
 
   create_table "groups", :force => true do |t|
-    t.integer  "owner_id",   :null => false
+    t.integer  "owner_id",                      :null => false
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "hidden",     :default => false
   end
 
   create_table "groups_users", :id => false, :force => true do |t|
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20111202080053) do
     t.string   "remember_token",     :limit => 128
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "id_group_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

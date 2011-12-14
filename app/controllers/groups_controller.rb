@@ -3,8 +3,12 @@ class GroupsController < ApplicationController
   respond_to :html, :json
 
   def index
+    if (params[:hidden])
+      @groups = Group.all
+    else
+      @groups = Group.where(:hidden => 0)
+    end
     @users = User.all
-    @groups = Group.all
     respond_with(@groups)
   end
 
