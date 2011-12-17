@@ -3,6 +3,8 @@ class AccountsController < ApplicationController
   respond_to :html, :json
 
   def index
+    @users = User.all
+    @groups = Group.all
     respond_with (@accounts = Account.all)
   end
 
