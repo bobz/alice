@@ -30,7 +30,7 @@ AccountsApp.Views.AccountItem = Backbone.View.extend({
   },
 
   accountUrl: function() {
-    return "#accounts/" + this.model.get('id');
+    return "#" + this.model.get('id');
   },
 
   update: function() {
