@@ -18,7 +18,8 @@ AccountsApp.Models.Account = Backbone.Model.extend({
       options: function(callback){
         callback(AccountsApp.groups)
       }
-    }
+    },
+// line_items: { type: 'List', 
   },
 
   urlRoot: '/accounts',
