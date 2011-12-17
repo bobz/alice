@@ -9,4 +9,16 @@ class Account < ActiveRecord::Base
       self.group = owner.id_group
     end
   end
+
+  def as_json( options={} ) 
+    {
+      id: self.id,
+      name: self.name,
+      description: self.description,
+      owner_id:  self.owner_id ,
+      group_id: self.group_id,
+      line_items: self.line_items
+    }
+  end
+
 end
