@@ -14,3 +14,4 @@
 //
 //= require ./tasks_app/application.js
 //= require ./groups_app/application.js
+//= require ./accounts_app/application.js
