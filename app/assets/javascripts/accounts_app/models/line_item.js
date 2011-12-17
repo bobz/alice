@@ -1,4 +1,4 @@
-AccountsApp.Models.LineItem = Backbone.Model.extend({
+AccountsApp.Models.LineItem = Backbone.DeepModel.extend({
   
   initialize: function() {
 

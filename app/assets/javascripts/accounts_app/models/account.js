@@ -1,4 +1,4 @@
-AccountsApp.Models.Account = Backbone.Model.extend({
+AccountsApp.Models.Account = Backbone.DeepModel.extend({
   
   initialize: function() {
 

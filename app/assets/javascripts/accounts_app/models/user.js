@@ -1,4 +1,4 @@
-AccountsApp.Models.User = Backbone.Model.extend({
+AccountsApp.Models.User = Backbone.DeepModel.extend({
   initialize: function() {
     var email = this.get('email');
     this.setEmail(email);
