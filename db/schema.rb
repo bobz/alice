@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111217140953) do
+ActiveRecord::Schema.define(:version => 20111217141803) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "owner_id",    :null => false
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(:version => 20111217140953) do
   end
 
   add_index "groups_users", ["group_id", "user_id"], :name => "index_groups_users_on_group_id_and_user_id", :unique => true
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "account_id", :null => false
+    t.string   "short_desc"
+    t.string   "long_desc"
+    t.datetime "eff_date"
+    t.integer  "owner_id",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tasks", :force => true do |t|
     t.string   "title"

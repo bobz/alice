@@ -1,0 +1,31 @@
+<h1>Listing line_items</h1>
+
+<table>
+  <tr>
+    <th>Account</th>
+    <th>Short desc</th>
+    <th>Long desc</th>
+    <th>Eff date</th>
+    <th>Owner</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @line_items.each do |line_item| %>
+  <tr>
+    <td><%= line_item.account_id %></td>
+    <td><%= line_item.short_desc %></td>
+    <td><%= line_item.long_desc %></td>
+    <td><%= line_item.eff_date %></td>
+    <td><%= line_item.owner_id %></td>
+    <td><%= link_to 'Show', line_item %></td>
+    <td><%= link_to 'Edit', edit_line_item_path(line_item) %></td>
+    <td><%= link_to 'Destroy', line_item, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Line item', new_line_item_path %>
