@@ -1,4 +1,4 @@
-AccountsApp.Models.Account = Backbone.Model.extend({
+AccountsApp.Models.Group = Backbone.Model.extend({
   
   initialize: function() {
 
@@ -6,7 +6,7 @@ AccountsApp.Models.Account = Backbone.Model.extend({
 
     if (this.id)
     {
-      users.url = '/accounts/' + this.id + '/users'
+      users.url = '/groups/' + this.id + '/users'
     }
 
     users.reset(_.map(this.get('users'), function(n) { return AccountsApp.users.get(n.id) }));
@@ -24,7 +24,7 @@ AccountsApp.Models.Account = Backbone.Model.extend({
     }
   },
 
-  urlRoot: '/accounts',
+  urlRoot: '/groups',
 
   getOwner: function() {
     if ( ! this.owner ) 
