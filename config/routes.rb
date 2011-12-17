@@ -1,4 +1,6 @@
 AliceApp::Application.routes.draw do
+  resources :accounts
+
   resources :tasks do
     resources :attachments, :only => [:create, :show]
   end

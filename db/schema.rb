@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111214091205) do
+ActiveRecord::Schema.define(:version => 20111217140953) do
+
+  create_table "accounts", :force => true do |t|
+    t.integer  "owner_id",    :null => false
+    t.string   "name",        :null => false
+    t.string   "description"
+    t.integer  "group_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "attachments", :force => true do |t|
     t.string   "upload_file_name"
