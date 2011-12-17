@@ -16,7 +16,7 @@ AccountsApp.Views.AccountItem = Backbone.View.extend({
 
     this.$('.account-members').text("");
     var self = this;
-    this.model.users.each( function(user) {
+    this.model.getGroup().users.each( function(user) {
       self.$('.account-members').append(user.escape('email') + "\t");
     });
 
