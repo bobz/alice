@@ -37,6 +37,10 @@ AccountsApp.Models.Group = Backbone.Model.extend({
     }
 
     return this.owner;
+  },
+
+  toString: function(){
+    return this.get('name')
   }
  
 });
