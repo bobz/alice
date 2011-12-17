@@ -3,6 +3,9 @@ class Group < ActiveRecord::Base
   belongs_to :owner, :class_name => 'User'
   has_and_belongs_to_many :users
 
+  has_many :accounts
+  has_many :claims
+
   after_create :add_owner_to_users
 
   def add_owner_to_users
