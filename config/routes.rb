@@ -1,4 +1,6 @@
 AliceApp::Application.routes.draw do
+  resources :claims
+
   resources :line_items
 
   resources :accounts

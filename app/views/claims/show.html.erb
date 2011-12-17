@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Line item:</b>
+  <%= @claim.line_item_id %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= @claim.group_id %>
+</p>
+
+<p>
+  <b>Claim type:</b>
+  <%= @claim.claim_type_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @claim.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_claim_path(@claim) %> |
+<%= link_to 'Back', claims_path %>

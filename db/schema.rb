@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111217142711) do
+ActiveRecord::Schema.define(:version => 20111217143236) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "owner_id",    :null => false
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(:version => 20111217142711) do
   create_table "claim_types", :force => true do |t|
     t.string   "string_ref"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "claims", :force => true do |t|
+    t.integer  "line_item_id",                                                  :null => false
+    t.integer  "group_id"
+    t.integer  "claim_type_id",                                                 :null => false
+    t.decimal  "quantity",      :precision => 13, :scale => 4, :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
