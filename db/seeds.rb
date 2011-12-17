@@ -33,6 +33,6 @@ Group.create!([
 {
   owner_id: bobz.id,
   name: 'Tri'
-}]).each { |group| group.users << [bobz, jay, brendon] }
+}]).each { |group| group.users << [ jay, brendon] }
 
 
