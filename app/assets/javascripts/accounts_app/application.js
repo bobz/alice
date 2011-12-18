@@ -1,5 +1,5 @@
 //= require      ./_init.js
-//= require_tree ./models
+//= require      ./models/application.js
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
