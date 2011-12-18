@@ -30,5 +30,9 @@ AccountsApp.Models.LineItem = Backbone.DeepModel.extend({
 
     return this.owner;
   },
+
+  toString: function() {
+    return this.get('short_desc');
+  }
  
 });

@@ -1,7 +1,13 @@
 AccountsApp.Models.Account = Backbone.DeepModel.extend({
   
   initialize: function() {
+    this.line_items = new AccountsApp.Collections.LineItems;
 
+    if (this.id){
+      this.line_items.url = '/line_items?account=' + this.id
+    }
+
+    this.line_items.reset(this.get('line_items'));
   },
 
   schema: {
