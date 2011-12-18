@@ -16,7 +16,7 @@ AccountsApp.Views.LineItemIndex = Backbone.View.extend({
   },
 
   renderAccount: function() {
-    this.$('#account-name').text(this.model.short_desc);
+    this.$('#account-name').text(this.model.escape('name'));
   },
 
   renderLineItems: function() {
