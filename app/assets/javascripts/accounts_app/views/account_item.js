@@ -20,13 +20,28 @@ AccountsApp.Views.AccountItem = Backbone.View.extend({
       self.$('.account-members').append(user.escape('email') + "\t");
     });
 
+    var action_li = document.createElement('li');
+    this.$('.account-actions').append(action_li);
+    
+    var items_link = document.createElement('a');
+    $(items_link).text("More");
+    $(items_link).attr("href", this.lineItemsUrl());
+    this.$(action_li).append( items_link );
+    
     if (this.model.getOwner().id == AccountsApp.current_user.id)
     {
+      var action_li = document.createElement('li');
+      this.$('.account-actions').append(action_li);
+
       var edit_link = document.createElement('a');
       $(edit_link).text("Edit");
       $(edit_link).attr("href", this.accountUrl());
-      this.$('.account-actions').append( edit_link );
+      this.$(action_li).append( edit_link );
     }  
+  },
+
+  lineItemsUrl: function() {
+    return "#" + this.model.get('id') + '/items';
   },
 
   accountUrl: function() {

@@ -6,7 +6,8 @@ AccountsApp.Routers.Accounts = Backbone.Router.extend({
   routes: {
     "":          "index",
     "new":       "newAccount",
-    ":id":       "show"
+    ":id":       "show",
+    ":id/items": "lineItemIndex"
   },
 
   index: function() {
@@ -27,5 +28,16 @@ AccountsApp.Routers.Accounts = Backbone.Router.extend({
         $('#accounts').html(view.render().el);
       }
     });
+  },
+
+  lineItemIndex: function(accountId) {
+    var account = this.collection.get(accountId);
+    account.fetch({
+      success: function() {
+        var view = new AccountsApp.Views.LineItemIndex({ model: account });
+        $('#accounts').html(view.render().el);
+      }
+    });
   }
+
 });
