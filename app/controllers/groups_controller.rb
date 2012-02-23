@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
     if (params[:hidden])
       @groups = Group.all
     else
-      @groups = Group.where(:hidden => 0)
+      @groups = Group.where(:hidden => false)
     end
     @users = User.all
     respond_with(@groups)
