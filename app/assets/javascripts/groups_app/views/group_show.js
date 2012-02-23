@@ -1,18 +1,20 @@
 GroupsApp.Views.GroupShow = Backbone.View.extend({
-  initialize: function() {
-    _.bindAll(this, "render", "uploadSuccess");
-    this.model.bind("change", this.render);
-  },
+  tagName: 'form',
+  id: 'show-group',
 
   events: {
-    "click .upload button": "upload"
+    "submit": "save",
+    "click a.leave": "leave"
+  },
+
+  initialize: function() {
+    _.bindAll(this, "render", "saved");
+    this.model.bind("change", this.render);
   },
 
   render: function () {
     this.renderTemplate();
     this.renderGroup();
-    this.renderAttachments();
-    this.attachUploader();
     return this;
   },
 
@@ -21,49 +23,33 @@ GroupsApp.Views.GroupShow = Backbone.View.extend({
   },
 
   renderGroup: function() {
-    this.$('p').text(this.model.escape('title'));
-    this.$('.upload input').attr('id',  'upload_' + this.model.get('id'));
-    this.$('.upload label').attr('for', 'upload_' + this.model.get('id'));
+    this.form = new Backbone.Form({ model: this.model });
+    this.$('#group-form').append(this.form.render().el);
+    this.$('ul').append(JST['shared/form_buttons']());
+    return this;
   },
 
-  renderAttachments: function() {
-    var self = this;
-    var $attachments = this.$('ul.attachments');
-    $attachments.html('');
-
-    this.model.attachments.each(function(attachment) {
-      var attachmentView = $('<li><p></p><img></li>');
-      $('p', attachmentView).text("Attached: " + attachment.escape('upload_file_name'));
-      $('img', attachmentView).attr("src", attachment.get('upload_url'));
-      $attachments.append(attachmentView);
-    });
+  save: function(event) {
+    this.form.commit();
+    this.model.save({}, { success: this.saved });
+    return false;
   },
 
-  attachUploader: function() {
-    var uploadUrl = "/groups/" + this.model.get('id') + '/attachments.json';
-
-    this.uploader = new uploader(this.uploadInput(), {
-      url:      uploadUrl,
-      success:  this.uploadSuccess,
-      prefix:   'upload'
-    });
-
-    this.uploader.prefilter = function() {
-      var token = $('meta[name="csrf-token"]').attr('content');
-      if (token) this.xhr.setRequestHeader('X-CSRF-Token', token);
-    }
+  renderFlash: function(flashText) {
+    $(this.el).prepend(JST['shared/flash']({ flashText: flashText, type: 'success' }));
   },
 
-  uploadInput: function() {
-    return this.$('.upload input').get(0);
-  },
+  saved: function() {
+    var flash = "Created account: " + this.model.escape('name');
 
-  upload: function() {
-    this.uploader.send();
+    this.render();
+    this.renderFlash(flash);
   },
-
-  uploadSuccess: function(data) {
-    this.model.fetch();
+  
+  leave: function() {
+    this.unbind();
+    this.remove();
   }
+
 });
 

@@ -19,7 +19,7 @@ GroupsApp.Models.Group = Backbone.Model.extend({
     owner_id: { title: 'Owner',
       type: 'Select', 
       options: function(callback){
-        callback(this.users );
+        callback(GroupsApp.users );
       }
     }
   },

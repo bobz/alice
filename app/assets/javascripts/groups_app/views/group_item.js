@@ -30,7 +30,7 @@ GroupsApp.Views.GroupItem = Backbone.View.extend({
   },
 
   groupUrl: function() {
-    return "#groups/" + this.model.get('id');
+    return "#" + this.model.get('id');
   },
 
   update: function() {
